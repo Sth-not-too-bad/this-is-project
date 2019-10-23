@@ -46,6 +46,8 @@ class Cars extends React.Component {
   };
 
   jump =( path )=> {
+      console.log(path)
+      console.log(this.props.history)
     this.props.history.push(path);
   };
 
@@ -57,10 +59,7 @@ class Cars extends React.Component {
         );
       } else {
         return (
-          <Menu.Item onClick={(item)=>{
-            console.log(this)
-            this.props.history.push(item.path)
-          }}>
+          <Menu.Item onClick={this.jump.bind(this,item.path)}>
             <Icon type="pie-chart" /> <span>{item.name}</span>{" "}
           </Menu.Item>
         );

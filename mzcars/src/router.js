@@ -13,12 +13,13 @@ class RootRouter extends Component{
         return(
             <HashRouter>
                 <Switch>
-                <Redirect exact from='/' to='/cars'></Redirect>
+                <Redirect exact from='/' to='/cars/home'></Redirect>
                 <Route path='/login' component={Eg1}></Route>
                 <Route path='/cars' render={()=>{
                     return(
                         <Cars>
                             <Route path='/cars/home' component={Eg}></Route>
+                            <Route path='/cars/customers' component={Eg1}></Route>
                         </Cars>
                     )
                 }}></Route>
