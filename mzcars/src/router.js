@@ -6,6 +6,8 @@ import Cars from  './cars'
 
 const User = ComponentImport(()=>import('./component/user'))
 const AddUser = ComponentImport(()=>import('./component/user/AddUser'))
+const Roles = ComponentImport(()=>import('./component/roles/home'))
+const AddRoles = ComponentImport(()=>import('./component/roles/add'))
 const Eg = ComponentImport(()=>import('./component/eg'))
 const Eg1 = ComponentImport(()=>import('./component/eg1'))
 
@@ -22,7 +24,9 @@ class RootRouter extends Component{
                         <Cars>
                             <Route path='/cars/home' component={Eg}></Route>
                             <Route path='/cars/customers' component={User}></Route>
+                            <Route exact path='/cars/set/roles' component={Roles}></Route>
                             <Route path='/cars/coustom/adduser' component={AddUser}></Route>
+                            <Route exact path='/cars/set/roles/addroles' component={AddRoles}></Route>
                         </Cars>
                     )
                 }}></Route>
