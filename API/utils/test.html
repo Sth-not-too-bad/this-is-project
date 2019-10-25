@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data 
+      async function  a(){
+          setTimeout(()=>{
+              console.log(1111)
+          },0)
+          console.log( data = await b()  )
+      }
+        function b() {
+          return  setTimeout(()=>{
+            return 'heihei'
+          },0)
+          
+      }
+      a()
+      // console.log(a())
+      // console.log(data)
+
+
+
+
+
+
+//       console.log("ok");
+//   var sql = "SELECT * FROM users";
+//   let  chaxun = new Promise( function (resolve,reject) {
+//     connection.query(sql, function(error, results) {
+//         if (error) {
+//           throw error;
+//         } else {
+//           a = results;
+//           console.log(1);   
+//           resolve(a)  
+//         }
+//       });
+//   } )
+//   chaxun.then(
+//    function (a) {
+//     console.log(2)
+    
+//    }
+//   )
+//   return  a 
+//   //在这里返回的时候 他还是什么也没有
+// }
+//     </script>
+//   </body>
+// </html>00
