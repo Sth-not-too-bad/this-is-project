@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux';
 import { Tabs, Card } from 'antd';
-import AllUser from './AllUser'
-import AddUser from './WaitUser'
+import Home from './home'
+import Add from './add'
 
-const { TabPane } = Tabs;
 class Container extends Component {
   render() {
     const { isListShow } = this.props;
@@ -12,11 +11,11 @@ class Container extends Component {
       <div>
         {isListShow === true ?
           <Card>
-            <AllUser />
+            <Home />
           </Card>
           :
           <div>
-            <AddUser />
+            <Add />
           </div>
         }
       </div>
@@ -25,7 +24,7 @@ class Container extends Component {
 }
 
 const mapStateToProps = state => ({
-  isListShow: state.user.uiStatus.isListShow,
+  isListShow: state.roles.uiStatus.isListShow,
 });
 
 const mapDispatchToProps = dispatch => ({

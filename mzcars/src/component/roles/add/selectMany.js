@@ -1,6 +1,6 @@
-import React,{Component} from 'react'
+import React, { Component } from 'react'
 
-import { Checkbox, Card ,Divider} from 'antd';
+import { Checkbox, Card, Divider } from 'antd';
 
 
 const CheckboxGroup = Checkbox.Group;
@@ -33,20 +33,21 @@ class SelectMany extends React.Component {
   };
 
   render() {
+    const { name, _plainOptions, _defaultCheckedList } = this.props;
     return (
       <Card>
-          <Checkbox
-            indeterminate={this.state.indeterminate}
-            onChange={this.onCheckAllChange}
-            checked={this.state.checkAll}
-          >
-            客户
-          </Checkbox>
+        <Checkbox
+          indeterminate={this.state.indeterminate}
+          onChange={this.onCheckAllChange}
+          checked={this.state.checkAll}
+        >
+          {name}
+        </Checkbox>
 
-        <Divider dashed/>
+        <Divider dashed />
         <CheckboxGroup
-          options={plainOptions}
-          value={this.state.checkedList}
+          options={_plainOptions}
+          value={_defaultCheckedList}
           onChange={this.onChange}
         />
       </Card>
