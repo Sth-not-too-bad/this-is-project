@@ -143,7 +143,7 @@ class AddRoles extends Component {
                                         {getFieldDecorator('role', {
                                             initialValue: item.role,
                                         })(
-                                            <Select style={{ width: '100%' }} placeholder="请选择文章状态">
+                                            <Select style={{ width: '100%' }} placeholder="请选择数据权限">
                                                 <Option value={'全公司'}>全公司</Option>
                                                 <Option value={'部门'}>部门</Option>
                                                 <Option value={'个人'}>个人</Option>
