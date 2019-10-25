@@ -64,7 +64,7 @@ class AddRoles extends Component {
                     style={{
                         border: '1px solid rgb(235, 237, 240)',
                     }}
-                    onBack={() => { this.props.history.push('/cars/set/roles') }}
+                    //onBack={() => { this.props.history.push('/cars/set/roles') }}
                     //onClick={this.jump.bind(this,'/cars/set/roles/addroles')}
                     title="添加角色"
                 />
