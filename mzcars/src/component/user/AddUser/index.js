@@ -31,7 +31,7 @@ class AddUser extends Component{
         let Time = `${YY}-${MM}-${DD}`
         values.Ctime = Time
         console.log(values)
-        axios.post('/user/addCustomer',values)
+        axios.post('/mz/addCustomer',values)
         .then((res)=>{
           console.log(res)
         })

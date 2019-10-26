@@ -43,7 +43,7 @@ class LStyle extends Component{
           obj.container.brand = clickName
           let data = JSON.stringify(obj)
           console.log(data)
-          Axios.post('/qiu/askCars',data,
+          Axios.post('/mz/askCars',data,
           {headers:{'Content-Type':'application/JSON'}})
           .then((res)=>{
             console.log(res)
@@ -61,7 +61,7 @@ class LStyle extends Component{
         console.log(index,price)
         let obj = {container:{}}
         let data = JSON.stringify(obj)
-        Axios.post('/qiu/upCars',data,
+        Axios.post('/mz/upCars',data,
         {headers:{'Content-Type':'application/JSON'}})
         .then((res)=>{
           console.log(res)

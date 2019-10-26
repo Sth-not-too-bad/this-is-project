@@ -8,7 +8,7 @@ const { TabPane } = Tabs;
 class User extends Component{
 
   componentDidMount(){
-    axios.post('/user/getCustomers')
+    axios.post('/mz/getCustomers')
     .then((data)=>{
       console.log(data)
     })

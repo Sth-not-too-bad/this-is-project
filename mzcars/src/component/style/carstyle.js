@@ -61,7 +61,7 @@ class Style extends React.Component{
     //   })
     // }
     componentDidMount(){
-        Axios.post('/qiu/getCars')
+        Axios.post('/mz/getCars')
         .then((res)=>{
             console.log(res.data)
             this.setState({carstyle : res.data})
@@ -104,7 +104,7 @@ class Style extends React.Component{
         obj.container.brand = clickName
         let data = JSON.stringify(obj)
         console.log(data)
-        Axios.post('/qiu/askCars',data,
+        Axios.post('/mz/askCars',data,
         {headers:{'Content-Type':'application/JSON'}})
         .then((res)=>{
           console.log(res)
