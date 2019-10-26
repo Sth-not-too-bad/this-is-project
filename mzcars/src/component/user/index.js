@@ -2,9 +2,18 @@ import React,{Component, Fragment} from 'react'
 import { Tabs, Card } from 'antd';
 import AllUser from './AllUser'
 import WaitUser from './WaitUser'
+import axios from '../../utils/axios'
 
 const { TabPane } = Tabs;
 class User extends Component{
+
+  componentDidMount(){
+    axios.post('/user/getCustomers')
+    .then((data)=>{
+      console.log(data)
+    })
+  }
+
   render(){
     return(
       <Fragment>

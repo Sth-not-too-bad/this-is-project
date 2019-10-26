@@ -21,30 +21,21 @@ class UserHeader extends Component{
       <Fragment>
       <Form>
         <div>
-          客户状态：{getFieldDecorator('state',{})(
-                  <Select style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
-                    <Option value="Option2-1">Option2-1</Option>
-                    <Option value="Option2-2">Option2-2</Option>
-                  </Select>)}
           客户姓名：{getFieldDecorator('name',{})(
           <Input type='text' style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入' />
           )}
-          客户手机：<Input type='tel' style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入' />
-          {this.state.State? 
-          <div>
-            责任销售：<Select style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
+          意向车系/车型：<Select style={{width:'22%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
                       <Option value="Option2-1">Option2-1</Option>
                       <Option value="Option2-2">Option2-2</Option>
                     </Select>
-            意向车系/车型：<Select style={{width:'22%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
-                      <Option value="Option2-1">Option2-1</Option>
-                      <Option value="Option2-2">Option2-2</Option>
-                    </Select>
-            客户来源：<Select style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
+          客户来源：<Select style={{width:'25%',marginRight:'25px',marginBottom:'10px'}} placeholder='请准确输入'>
                       <Option value="Option2-1">Option2-1</Option>
                       <Option value="Option2-2">Option2-2</Option>
                     </Select><br/>
+          {this.state.State? 
+          <div>
             客户创建时间：<DatePicker style={{marginRight:'50px'}}/>
+            上次跟进时间：<DatePicker style={{marginRight:'50px'}}/>
             <div className='button-box'>
               <Button type="primary" >查询</Button>
               <Button onClick={this.handleReset}>重置</Button>

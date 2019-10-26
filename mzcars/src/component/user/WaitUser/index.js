@@ -1,12 +1,14 @@
 import React,{Component, Fragment} from 'react'
-import { Tabs } from 'antd';
+import UserHeader from './userheader'
+import UserContent from './userContent'
+import './index.less'
 
-const { TabPane } = Tabs;
 class User extends Component{
   render(){
     return(
       <Fragment>
-        待分配客户
+        <UserHeader></UserHeader>
+        <UserContent></UserContent>
       </Fragment>
     )
   }
