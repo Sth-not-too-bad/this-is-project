@@ -6,6 +6,9 @@ import Cars from  './cars'
 
 const Eg = ComponentImport(()=>import('./component/eg'))
 const Eg1 = ComponentImport(()=>import('./component/eg1'))
+const Carstyle = ComponentImport(()=>import('./component/style/carstyle'))
+const Edit = ComponentImport(()=>import('./component/style/edit'))
+const Leads = ComponentImport(()=>import('./component/report/leads'))
 
 
 class RootRouter extends Component{
@@ -20,6 +23,9 @@ class RootRouter extends Component{
                         <Cars>
                             <Route path='/cars/home' component={Eg}></Route>
                             <Route path='/cars/customers' component={Eg1}></Route>
+                            <Route path='/cars/store/list' component={Carstyle}></Route>
+                            <Route path='/cars/store/edit' component={Edit}></Route>
+                            <Route path='/cars/report/leads' component={Leads}></Route>
                         </Cars>
                     )
                 }}></Route>
