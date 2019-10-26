@@ -40,7 +40,7 @@ class Style extends React.Component{
             mode: 'inline',
             theme: 'light',
             openKeys: ['0'],
-            clickName:'BWM',
+            clickName:'BMW',
             option:[],
         }
     }
