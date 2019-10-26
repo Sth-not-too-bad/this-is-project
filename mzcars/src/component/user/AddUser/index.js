@@ -23,7 +23,6 @@ class AddUser extends Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        
         let time = new Date()
         var YY = time.getFullYear()
         var MM = time.getMonth()
@@ -35,10 +34,8 @@ class AddUser extends Component{
         console.log(obj)
         let data = JSON.stringify(obj)
         console.log(data)
-        axios.post('/user/addCustomer',data,
+        axios.post('/mz/addCustomer',data,
           {headers:{'Content-Type':'application/JSON'}}
-        
-
         )
         .then((res)=>{
           console.log(res)

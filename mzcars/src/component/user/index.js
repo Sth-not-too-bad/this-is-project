@@ -14,7 +14,7 @@ class User extends Component{
     }
   }
   componentDidMount(){
-    axios.post('/user/getCustomers')
+    axios.post('/mz/getCustomers')
     .then((res)=>{
       let {data} = res
       data.map((item,index)=>{
@@ -23,6 +23,7 @@ class User extends Component{
         }
         return this.state.All.push(item)
       })
+
     })
   }
 

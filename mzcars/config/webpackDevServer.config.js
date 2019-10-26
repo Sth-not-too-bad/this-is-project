@@ -82,14 +82,33 @@ module.exports = function(proxy, allowedHost) {
     },
     public: allowedHost,
     proxy:{
+// <<<<<<< HEAD
+      '/mz':{
+        target:'http://10.60.14.117:3000',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/mz':''
+        }
+      },
+    } ,
+/* =======
+<<<<<<< HEAD
+>>>>>>> f16cf3652f51dd139378c03b22cad2313eee94b2
       '/user':{
         target:'http://10.60.14.117:3000',
         changeOrigin:true,
         pathRewrite:{
           '^/user':''
-        }
+=======
+      '/api':{
+        target:'http://10.60.14.117:3000',
+        changeOrigin:true,
+        pathRewrite:{
+          '^/api':''
+>>>>>>> zly */
+  /*       }
       },
-    },
+    }, */
     before(app, server) {
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
