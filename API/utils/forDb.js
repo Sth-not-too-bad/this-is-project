@@ -81,6 +81,7 @@ function update(target, connection, container, theid) {
     let type = 1;
     let detail = doSth1(type, container);
     let upSql = `UPDATE ${target} SET ${detail} WHERE Id = ${theid}`;
+    console.log(upSql)
     fangwen(connection, upSql, res, rej);
   });
 }
@@ -89,6 +90,7 @@ function update(target, connection, container, theid) {
 function del(target, connection, theid) {
   return new Promise((res, rej) => {
     let delSql = `DELETE FROM ${target} where id=${theid}`;
+    console.log(delSql)
     fangwen(connection, delSql, res, rej);
   });
 }
