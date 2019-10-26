@@ -50,11 +50,28 @@ app.post("/upUser", (comein, goout) => {
   });
   //更改用户信息
 });
+//修改用户
+
+app.post('/askUser',(comein,goout)=>{
+  let target = 'users'
+  let container = comein.body.container
+  console.log(comein.body)
+  ask(target,con,container).then(result=>{
+    goout.send(result)
+  }).catch(err=>{
+    goout.send(err)
+  })
+})
+//条件查询用户
 
 app.post("/delUser", (comein, goout) => {
   let target = "users";
   let id = comein.body.id;
-  del(target, con, id);
+  del(target, con, id).then(result=>{
+    goout.send(result)
+  }).catch(()=>{
+    goout.send('请检查')
+  })
 });
 //删除用户
 
@@ -66,7 +83,7 @@ app.post("/readRoles", (comein, goout) => {
 });
 //查询全部角色
 
-app.post("/addRoles", (comein, goout) => {
+app.post("/addRole", (comein, goout) => {
   let target = "roles";
   let container = comein.body.container;
   insert(target, con, container)
@@ -109,7 +126,7 @@ app.post("/getCars", (comein, goout) => {
 });
 //查询车型信息
 
-app.post('/addCars',(comein,goout)=>{
+app.post('/addCar',(comein,goout)=>{
   let target = "cars";
   let container = comein.body.container;
   insert(target, con, container)
@@ -136,6 +153,18 @@ app.post("/upCars",(comein,goout)=>{
 })
 //修改车型信息
 
+app.post('/askCars',(comein,goout)=>{
+  let target = 'cars'
+  let container= comein.body.container
+  console.log(container)
+  ask(target,con,container).then(result=>{
+    goout.send(result)
+  }).catch(err=>{
+    goout.send(err)
+  })
+})
+//条件查询车型
+
 app.post('/getCustomers',(comein,goout)=>{
   let target = "customers";
   search(target, con).then(result => {
@@ -147,12 +176,15 @@ app.post('/getCustomers',(comein,goout)=>{
 app.post("/addCustomer",(comein,goout)=>{
   let target = "customers";
   let container = comein.body.container;
+  console.log(comein.body)
+  console.log(comein.body.container)
   insert(target, con, container)
     .then(result => {
       goout.send(result);
     })
-    .catch(() => {
-      goout.send("别发了");
+    .catch((err) => {
+      console.log(err)
+      goout.send(err);
     });
 })
 //添加客户信息
@@ -178,9 +210,29 @@ app.post("/delCustomers", (comein, goout) => {
 });
 //删除数据
 
+app.post('/askCustomers',(comein,goout)=>{
+  let target = 'customers'
+  let container = comein.body.container
+  ask(target,con,container).then(result=>{
+    goout.send(result)
+  }).catch(err=>{
+    goout.send(err)
+  })
+})
+//客户条件查询
 
-
-
+app.post('/toLogin',(comein,goout)=>{
+  let target ='users'
+  let container = comein.body.container
+  console.log(comein.body)
+  ask(target,con,container).then(result=>{
+    console.log(result[0])
+    goout.send({user:result[0].userName,token:result[0].token})
+  }).catch(err=>{
+    goout.send(err)
+  })
+})
+//登录
 
 app.listen(3000, () => {
   console.log("strart srver");
