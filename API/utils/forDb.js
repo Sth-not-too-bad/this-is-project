@@ -9,7 +9,7 @@ function doSth(container) {
       tbd += ",?";
     }
     values = values.join();
-    return [keys, values, tbd];
+    return [keys, values, tbd];                               ````````````````````````````````````````````````````````````
   } else {
     throw "you tripping? why ask data without rules?";
   }
@@ -58,7 +58,8 @@ function insert(target, connection, container) {
 //查询全部
 function search(target, connection, container) {
   return new Promise((res, rej) => {
-    let allSql = `SELECT * FROM ${target}  `;
+    let allSql = `SELECT * FROM ${target}`;
+    console.log(allSql)
     fangwen(connection, allSql, res, rej);
   });
 }
