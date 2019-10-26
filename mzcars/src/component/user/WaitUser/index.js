@@ -3,15 +3,15 @@ import UserHeader from './userheader'
 import UserContent from './userContent'
 import './index.less'
 
-class User extends Component{
+class WaitUser extends Component{
   render(){
     return(
       <Fragment>
         <UserHeader></UserHeader>
-        <UserContent></UserContent>
+        <UserContent>{this.props=this.props.children}</UserContent>
       </Fragment>
     )
   }
 }
 
-export default User
+export default WaitUser

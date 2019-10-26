@@ -30,10 +30,21 @@ class AddUser extends Component{
         var DD = time.getDate()
         let Time = `${YY}-${MM}-${DD}`
         values.Ctime = Time
-        console.log(values)
-        axios.post('/user/addCustomer',values)
+        let obj = {}
+        obj.container=values
+        console.log(obj)
+        let data = JSON.stringify(obj)
+        console.log(data)
+        axios.post('/user/addCustomer',data,
+          {headers:{'Content-Type':'application/JSON'}}
+        
+
+        )
         .then((res)=>{
           console.log(res)
+        })
+        .catch((err)=>{
+          console.log(err)
         })
       }
     });
@@ -69,8 +80,8 @@ class AddUser extends Component{
               <Form.Item label="性别">
               {getFieldDecorator('gender', {})(
                 <Radio.Group onChange={this.onChange} value={this.state.value}>
-                  <Radio value={1}>男</Radio>
-                  <Radio value={2}>女</Radio>
+                  <Radio value={'男'}>男</Radio>
+                  <Radio value={'女'}>女</Radio>
                 </Radio.Group>)}
               </Form.Item>
               <Form.Item label="客户来源">
@@ -88,7 +99,7 @@ class AddUser extends Component{
             <h2>购车需求</h2>
             <Form  labelCol={{ span:5 }} wrapperCol={{ span: 12 }} onSubmit={this.handleSubmit}>
               <Form.Item label="意向车型">
-                {getFieldDecorator('car', {
+                {getFieldDecorator('want', {
                   rules: [{ required: true, message: 'Please input your note!' }],
                 })(
                   <Select>
@@ -108,8 +119,8 @@ class AddUser extends Component{
               <Form.Item label="付款方式">
               {getFieldDecorator('payStyle', {})(
                 <Radio.Group onChange={this.onChange} value={this.state.value}>
-                  <Radio value={3}>全款</Radio>
-                  <Radio value={4}>贷款</Radio>
+                  <Radio value={'全款'}>全款</Radio>
+                  <Radio value={'贷款'}>贷款</Radio>
                 </Radio.Group>)}<br/>
                 <Button type="primary" onClick={this.Submit}>保存客户</Button>
               </Form.Item>

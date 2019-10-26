@@ -6,13 +6,26 @@ import axios from '../../utils/axios'
 
 const { TabPane } = Tabs;
 class User extends Component{
-
+  constructor(){
+    super()
+    this.state = {
+      All:[],
+      wait:[]
+    }
+  }
   componentDidMount(){
     axios.post('/user/getCustomers')
-    .then((data)=>{
-      console.log(data)
+    .then((res)=>{
+      let {data} = res
+      data.map((item,index)=>{
+        if (!item.leader){
+          this.state.wait.push(item)
+        }
+        return this.state.All.push(item)
+      })
     })
   }
+
 
   render(){
     return(
@@ -21,10 +34,10 @@ class User extends Component{
           <TabPane tab="客户管理" disabled key="1">
           </TabPane>
           <TabPane tab="全部客户"  key="2">
-            <Card><AllUser></AllUser></Card>
+            <Card><AllUser>{this.props=this.state.All}</AllUser></Card>
           </TabPane>
           <TabPane tab="待分配客户" key="3">
-          <Card><WaitUser></WaitUser></Card>
+          <Card><WaitUser>{this.props=this.state.wait}</WaitUser></Card>
           </TabPane>
         </Tabs>
       </Fragment>
